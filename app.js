@@ -2,7 +2,7 @@
 // Aquí deberás desarrollar la lógica para resolver el problema.
 
 //let listarAmigos=['Karen','María','Alejandra','Martín','Victoria','Pedro'];
-const listarAmigos=[];
+var listarAmigos=[];
 let amigoSecreto= '';
 let idAmigo= 0;
 
@@ -27,18 +27,16 @@ function agregarAmigo(){
         limpiarCaja();
         console.log(listarAmigos);
         asignarTextoElemento('#listaAmigos',`Lista de amigos son: ${listarAmigos}`);
-        //alert(`el nuevo amigo ingresado es: ${nuevoAmigo}`);
         return listarAmigos;
     }
-    //
-   // listarAmigos=[nuevoAmigo];
-    //console.log(nuevoAmigo);
+
 }
 //Esta función, genera el Id dinámico para seleccionar la posición del arreglo listarAmigos[]
 function sortearAmigo(){
     let idAmigo = Math.floor(Math.random()*listarAmigos.length);
     asignarTextoElemento('#resultado',`El amigo secreto es: ${listarAmigos[idAmigo]}`);
     //console.log(`Id del amigo secreto ess:${listarAmigos[idAmigo]}`);
+    document.getElementById('reiniciar').removeAttribute('disabled');
     return idAmigo;
 }
 
@@ -48,6 +46,18 @@ function mostrarAmigoSecreto(){
     //console.log(idAmigo);
 }
 
+function reiniciar(){
+//alert("nuevo juevo");
+//limpiar caja
+//limpiarCaja();
+//deshabilitar botón reinicar
+listarAmigos=[];
+idAmigo=0;
+//console.log(`array : ${listarAmigos}`);
+asignarTextoElemento('#listaAmigos',`${listarAmigos}`);
+asignarTextoElemento('#resultado',``);
+//document.querySelector('#reiniciar').setAttribute('disabled','true');
+}
 
 //mostrarListaAmigos();
 //sortearAmigo();
