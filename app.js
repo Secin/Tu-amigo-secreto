@@ -16,17 +16,28 @@ function limpiarCaja(){
     document.querySelector('#amigo').value = '';
 }
 
+
+
 function agregarAmigo(){
     //
     //validar sí el campo no está vacío
     if((document.getElementById('amigo').value)== ''){
     alert('Campo esta vacío');
-    }else{
+    }
+    else{
         let nuevoAmigo=document.getElementById('amigo').value;
         listarAmigos.push(nuevoAmigo);
         limpiarCaja();
         console.log(listarAmigos);
-        asignarTextoElemento('#listaAmigos',`Lista de amigos son: ${listarAmigos}`);
+    //funcion listar  amigos
+        let listado=document.getElementById('listaAmigos');
+         listado.innerHTML="";
+         for(i=0;i<listarAmigos.length;i++){
+        //console.log(listarAmigos);
+            let li= document.createElement("li");
+            li.textContent = listarAmigos[i];
+            listado.appendChild(li);
+        }
         return listarAmigos;
     }
 
