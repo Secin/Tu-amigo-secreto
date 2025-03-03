@@ -44,11 +44,15 @@ function agregarAmigo(){
 }
 //Esta función, genera el Id dinámico para seleccionar la posición del arreglo listarAmigos[]
 function sortearAmigo(){
+    if(listarAmigos.length>0){
     let idAmigo = Math.floor(Math.random()*listarAmigos.length);
     asignarTextoElemento('#resultado',`El amigo secreto es: ${listarAmigos[idAmigo]}`);
     //console.log(`Id del amigo secreto ess:${listarAmigos[idAmigo]}`);
     document.getElementById('reiniciar').removeAttribute('disabled');
     return idAmigo;
+}else{
+    alert("No hay amigos suficientes para sortear")
+}
 }
 
 function mostrarAmigoSecreto(){
