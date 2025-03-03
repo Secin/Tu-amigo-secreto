@@ -28,8 +28,8 @@ function agregarAmigo(){
         let nuevoAmigo=document.getElementById('amigo').value;
         listarAmigos.push(nuevoAmigo);
         limpiarCaja();
-        console.log(listarAmigos);
-    //funcion listar  amigos
+        //console.log(listarAmigos);
+        //funcion listar  amigos
         let listado=document.getElementById('listaAmigos');
          listado.innerHTML="";
          for(i=0;i<listarAmigos.length;i++){
